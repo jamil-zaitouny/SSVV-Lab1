@@ -22,7 +22,8 @@ public class AppTest
         String email = "vlad@gmail.com";
         try{
             Student student = new Student(studentID, studentName, group, email);
-            fail();
+            assertTrue(true);
+
         }catch (Exception exception){
             assertTrue(true);
         }
