@@ -4,13 +4,13 @@ public interface HasID<ID> {
 
     /**
      *
-     * @return id-ul unui obiect
+     * @return The id of the object
      */
     ID getID();
 
     /**
-     * Modifica id-ul unul obiect
-     * @param id - noul id
+     * Modifies the id of an object
+     * @param id - a new id
      */
     void setID(ID id);
 }

@@ -8,16 +8,16 @@ import org.w3c.dom.NodeList;
 public class StudentXMLRepo extends AbstractXMLRepository<String, Student> {
     /**
      * Class constructor
-     * @param filename - numele fisierului
+     * @param filename - The name of the file
      */
     public StudentXMLRepo(String filename) {
         super(filename);
     }
 
     /**
-     * Extrage informatia despre student dintr-un element XML
-     * @param element - XML-ul din care ia datele studentului
-     * @return studentul
+     * Extract student information from an XML element
+     * @param element - The XML element for which the student is to be retrieved
+     * @return The student
      */
 
     @Override
@@ -36,7 +36,6 @@ public class StudentXMLRepo extends AbstractXMLRepository<String, Student> {
 
         return new Student(studentId, nume, Integer.parseInt(grupa), email);
     }
-
     @Override
     public Element createElementfromEntity(Document document, Student entity) {
         Element e = document.createElement("student");

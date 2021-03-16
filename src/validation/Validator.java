@@ -2,9 +2,9 @@ package validation;
 
 public interface Validator<E> {
     /**
-     * valideaza o entitate
-     * @param entity - entitatea pe care o valideaza
-     * @throws ValidationException daca entitatea nu e valida
+     * Validate an entity
+     * @param entity - The entity to be validated
+     * @throws ValidationException If the entity is valid
      */
     void validate(E entity) throws ValidationException;
 }

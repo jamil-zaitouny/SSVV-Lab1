@@ -12,10 +12,10 @@ public class Tema implements HasID<String> {
 
     /**
      *
-     * @param nrTema - numarul temei
-     * @param descriere - descrierea unei teme
-     * @param deadline - deadlineul unei teme
-     * @param primire - saptamana de primirea unei teme
+     * @param nrTema - the number of the homework
+     * @param descriere - the description of the homework
+     * @param deadline - the deadline of the homework
+     * @param primire - Week of receiving the homework assignment
      * Class Constructor
      */
     public Tema(String nrTema, String descriere, int deadline, int primire) {
@@ -26,51 +26,51 @@ public class Tema implements HasID<String> {
     }
 
     /**
-     * @return descrierea unei teme
+     * @return get the description of a homework
      */
     public String getDescriere() {
         return descriere;
     }
 
     /**
-     * modifica descrierea unei teme
-     * @param descriere - noua descriere
+     * modify the description of a homework
+     * @param descriere - new description
      */
     public void setDescriere(String descriere) {
         this.descriere = descriere;
     }
 
     /**
-     * @return deadlineul unei teme
+     * @return the deadline of the homework
      */
     public int getDeadline() {
         return deadline;
     }
 
     /**
-     * modifica deadlineul unei note
+     * modify the grading deadline
      */
     public void setDeadline(int deadline) {
         this.deadline = deadline;
     }
 
     /**
-     * @return saptamana primirii unei teme
+     * @return The week for which the homework was given
      */
     public int getPrimire() {
         return primire;
     }
 
     /**
-     * modifica saptamana primirii unei teme
-     * @param primire - noua saptamana de primire
+     * modifica modifies the week for which a homework was given
+     * @param primire - new week
      */
     public void setPrimire(int primire) {
         this.primire = primire;
     }
 
     /**
-     * @return numarul unei teme
+     * @return the ID of a homework
      */
     @Override
     public String getID() {
@@ -78,8 +78,8 @@ public class Tema implements HasID<String> {
     }
 
     /**
-     * schimba numarul unei teme
-     * @param nrTema - noul numar al temei
+     * Change the ID of a homework
+     * @param nrTema - new number for homework
      */
     @Override
     public void setID(String nrTema) {
@@ -87,7 +87,7 @@ public class Tema implements HasID<String> {
     }
 
     /**
-     * @return un obiect de tip Tema sub forma unui string
+     * @return Object Tema as a string
      */
     @Override
     public String toString() {

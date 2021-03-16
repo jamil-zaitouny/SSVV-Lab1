@@ -8,18 +8,18 @@ package repository;
 public interface FileRepository<ID, E extends HasID<ID>> {
 
     /**
-     * Incarca datele din fisier
+     * Loads the data from the file
      */
     void loadFromFile();
 
     /**
-     * Scrie un obiect nou in fisier
-     * @param entity - obiectul pe care il scrie
+     * Writes a new object into the file
+     * @param entity - The object to be written
      */
     void saveToFile(E entity);
 
     /**
-     * Rescrie fisierul
+     * Rewrite the file
      */
     void writeToFile();
 }

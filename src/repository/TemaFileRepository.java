@@ -6,16 +6,16 @@ public class TemaFileRepository extends AbstractFileRepository<String, Tema> {
 
     /**
      * Class constructor
-     * @param filename - numele fisierului
+     * @param filename - The name of the file
      */
     public TemaFileRepository(String filename){
         super(filename);
     }
 
     /**
-     * Extrage informatia despre tema dintr-un string
-     * @param linie - stringul din care ia datele temei
-     * @return tema
+     * Extract information about the grade from a
+     * @param linie - The string that contains the data about the homework
+     * @return the homework
      */
     @Override
     public Tema extractEntity(String linie) {

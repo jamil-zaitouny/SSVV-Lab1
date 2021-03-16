@@ -2,8 +2,8 @@ package validation;
 
 public class ValidationException extends RuntimeException {
     /**
-     * Clasa pentru exceptii
-     * @param exception - exceptia pe care o arunca
+     * Excpetion Class
+     * @param exception - Exception to be thrown
      */
     public ValidationException(String exception){
         super(exception);

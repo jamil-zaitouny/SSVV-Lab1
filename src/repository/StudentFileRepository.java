@@ -6,15 +6,15 @@ public class StudentFileRepository extends AbstractFileRepository<String, Studen
 
     /**
      * Class constructor
-     * @param filename - numele fisierului
+     * @param filename - The name of the file
      */
     public StudentFileRepository(String filename) {
         super(filename);
     }
 
     /**
-     * Extrage informatia despre student dintr-un string
-     * @param linie - stringul din care ia datele studentului
+     * Extract information about the student from a string
+     * @param linie - The string that contains the data of the student
      * @return studentul
      */
     @Override

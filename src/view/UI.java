@@ -10,21 +10,21 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
- * Interfata utilizator de tip consola
+ * Console interface
  */
 public class UI {
     private Service service;
 
     /**
      * Class constructor
-     * @param service - service-ul clasei
+     * @param service - Service object
      */
     public UI(Service service) {
         this.service = service;
     }
 
     /**
-     * Metoda care ruleaza aplicatia
+     * Method that start the program
      */
     public void run() {
         System.out.println("Bine ati venit!");
@@ -366,7 +366,7 @@ public class UI {
         System.out.print("Introduceti numarul temei: ");
         String nrTema = scanner.next();
         String idNota = idStudent + "#" + nrTema;
-        if (service.findNota(idNota) != null) {
+        if (service.findGrade(idNota) != null) {
             throw new ValidationException("Nota exista deja!");
         }
         System.out.print("Introduceti nota: ");
@@ -411,7 +411,7 @@ public class UI {
         System.out.print("Introduceti nr-ul temei: ");
         String nrTema = scanner.next();
         String idNota = idStudent + "#" + nrTema;
-        Nota nota = service.findNota(idNota);
+        Nota nota = service.findGrade(idNota);
         if (nota == null) {
             System.out.println("Nota nu exista!");
         } else {

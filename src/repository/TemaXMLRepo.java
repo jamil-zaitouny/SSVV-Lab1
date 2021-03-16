@@ -9,16 +9,16 @@ public class TemaXMLRepo extends AbstractXMLRepository<String, Tema> {
 
     /**
      * Class constructor
-     * @param filename - numele fisierului
+     * @param filename - The name of the file
      */
     public TemaXMLRepo(String filename){
         super(filename);
     }
 
     /**
-     * Extrage informatia despre tema dintr-un elem XML
-     * @param element - stringul din care ia datele temei
-     * @return tema
+     * Extract info about hte homework from the XML enetity
+     * @param element - The element that contains the information about the homework
+     * @return homework
      */
     @Override
     public Tema extractEntity(Element element) {
@@ -38,7 +38,7 @@ public class TemaXMLRepo extends AbstractXMLRepository<String, Tema> {
     }
 
     /**
-     * Creeaza un element XML dintr o entitate Tema
+     * Creates an XML element from a homework entity
      * @param document
      * @param entity
      * @return

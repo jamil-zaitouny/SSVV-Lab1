@@ -10,10 +10,10 @@ public class Student implements HasID<String> {
 
     /**
      * Class Constructor
-     * @param idStudent - id-ul studentului
-     * @param nume - numele studentului
-     * @param grupa - grupa studentului
-     * @param email - emailul unui student
+     * @param idStudent - the id of the student
+     * @param nume - the name of the student
+     * @param grupa - the group of the student
+     * @param email - the email of the student
      */
     public Student(String idStudent, String nume, int grupa, String email) {
         this.idStudent = idStudent;
@@ -23,67 +23,67 @@ public class Student implements HasID<String> {
     }
 
     /**
-     * @return id-ul unui student
+     * @return the id of the student
      */
     public String getID() {
         return idStudent;
     }
 
     /**
-     * modifica id-ul unui student
-     * @param ID - noul id al studentului
+     * modifica the id of the student
+     * @param ID - new id for student
      */
     public void setID(String ID) {
         this.idStudent = ID;
     }
 
     /**
-     * @return numele studentului
+     * @return the name of the student
      */
     public String getNume() {
         return nume;
     }
 
     /**
-     * modifica numele studentului
-     * @param nume - noul nume
+     * modify the name of the student
+     * @param nume - new name
      */
     public void setNume(String nume) {
         this.nume = nume;
     }
 
     /**
-     * @return grupa studentului
+     * @return the student group
      */
     public int getGrupa() {
         return grupa;
     }
 
     /**
-     * modifica grupa studentului
-     * @param grupa - noua grupa
+     * modify the student group
+     * @param grupa - the new group
      */
     public void setGrupa(int grupa) {
         this.grupa = grupa;
     }
 
     /**
-     * @return emai-ul studentului
+     * @return the email of the student
      */
     public String getEmail() {
         return email;
     }
 
     /**
-     * modifica emailul studentului
-     * @param email - noul email
+     * modify the email of the student
+     * @param email - new email
      */
     public void setEmail(String email) {
         this.email = email;
     }
 
     /**
-     * @return un obiect de tip Student sub forma de string
+     * @return an object of type Student as a string
      */
     @Override
     public String toString() {

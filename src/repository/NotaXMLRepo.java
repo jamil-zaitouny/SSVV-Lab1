@@ -11,7 +11,7 @@ public class NotaXMLRepo extends AbstractXMLRepository<String, Nota> {
 
     /**
      * Class constructor
-     * @param filename - numele fisierului
+     * @param filename - The name of the file
      */
     public NotaXMLRepo(String filename) {
         super( filename);
@@ -44,8 +44,8 @@ public class NotaXMLRepo extends AbstractXMLRepository<String, Nota> {
 
 
     /**
-     * Extrage informatia despre nota dintr-un XML
-     * @param element - elem XML din care ia datele notei
+     * Extract information about the grades from the XML file
+     * @param element - The XML element from which the note is to be extracted
      * @return nota
      */
     @Override

@@ -9,7 +9,7 @@ public abstract class AbstractFileRepository<ID, E extends HasID<ID>> extends Ab
 
     /**
      * Class constructor
-     * @param filename - numele fisierului
+     * @param filename - the name of the file
      */
     AbstractFileRepository(String filename) {
         this.filename = filename;
@@ -17,14 +17,14 @@ public abstract class AbstractFileRepository<ID, E extends HasID<ID>> extends Ab
     }
 
     /**
-     * Extrage un obiect dintr-un String
-     * @param linie - String-ul din care extrage obiectul
-     * @return - obiectul
+     * Extracts an object from a string
+     * @param linie - The string for the object is to be extracted from
+     * @return - The object that was parsed
      */
     public abstract E extractEntity(String linie);
 
     /**
-     * Incarca datele din fisier
+     *  Load the data from the file
      */
     public void loadFromFile(){
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(filename))) {
@@ -39,8 +39,8 @@ public abstract class AbstractFileRepository<ID, E extends HasID<ID>> extends Ab
     }
 
     /**
-     * Scrie un obiect nou in fisier
-     * @param entity - obiectul pe care il scrie
+     * Write an bject into the file
+     * @param entity - The object it writes
      */
     public void saveToFile(E entity){
         try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(filename, true))) {
@@ -52,7 +52,7 @@ public abstract class AbstractFileRepository<ID, E extends HasID<ID>> extends Ab
     }
 
     /**
-     * Rescrie fisierul cu toate obiectele din memorie
+     * Rewrite the file with all the objects from memory
      */
     public void writeToFile(){
         try (PrintWriter b = new PrintWriter(this.filename)) {
@@ -66,9 +66,9 @@ public abstract class AbstractFileRepository<ID, E extends HasID<ID>> extends Ab
     }
 
     /**
-     * Salveaza un obiect
-     * @param entity - obiectul pe care il salveaza
-     * @return null daca obiectul s-a salvat cu succes sau obiectul daca acesta exista deja in memorie
+     * Save an object
+     * @param entity - The object to be savced
+     * @return null if the object saves already, the object itself if it already exists in memory
      */
     @Override
     public E save(E entity) {
@@ -81,9 +81,9 @@ public abstract class AbstractFileRepository<ID, E extends HasID<ID>> extends Ab
     }
 
     /**
-     * Sterge un obiect
-     * @param id - id-ul obiectului
-     * @return obiectul daca s-a reusit stergerea sau null daca obiectul nu exista
+     * Delete an Object
+     * @param id - The id of the object
+     * @return The object if the deletion happens successfully or the object itself if there's no instance of it in memory
      */
     @Override
     public E delete(ID id) {
@@ -95,9 +95,9 @@ public abstract class AbstractFileRepository<ID, E extends HasID<ID>> extends Ab
     }
 
     /**
-     * Modifica un obiect
-     * @param entity - noul obiect
-     * @return null daca obiectul a fost modificat sau obiectul, daca acesta nu exista
+     * Modify an object
+     * @param entity - The new object
+     * @return null if the object was modified, the object itself if it doesn't exists
      */
     @Override
     public E update(E entity) {

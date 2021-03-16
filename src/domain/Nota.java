@@ -13,11 +13,11 @@ public class Nota implements HasID<String> {
 
     /**
      * Class Constructor
-     * @param id - id-ul notei
-     * @param idStudent - id-ul studentului
-     * @param idTema - id-ul temei
-     * @param nota - valoarea notei
-     * @param data - data in care a fost predata tema
+     * @param id - Grade id
+     * @param idStudent - Student id
+     * @param idTema - Homework id
+     * @param nota - grade value
+     * @param data - date for which the homework has been submitted
      */
     public Nota(String id, String idStudent, String idTema, double nota, LocalDate data){
         this.id = id;
@@ -28,28 +28,28 @@ public class Nota implements HasID<String> {
     }
 
     /**
-     * @return id-ul studentului
+     * @return the id of the student
      */
     public String getIdStudent() {
         return idStudent;
     }
 
     /**
-     * @return id-ul temei
+     * @return id of the homework
      */
     public String getIdTema() {
         return idTema;
     }
 
     /**
-     * @return valoarea notei
+     * @return grade value
      */
     public double getNota() {
         return nota;
     }
 
     /**
-     * Modifica valoarea unei note
+     * modify the value of the grade
      * @param nota - noua valoarea a notei
      */
     public void setNota(double nota) {
@@ -57,7 +57,7 @@ public class Nota implements HasID<String> {
     }
 
     /**
-     * @return data in care a fost predata nota
+     * @return The date for the which the grade was given
      */
     public LocalDate getData() {
         return data;
@@ -69,7 +69,7 @@ public class Nota implements HasID<String> {
     }
 
     /**
-     * @return id-ul notei
+     * @return id of the grade
      */
     @Override
     public String getID() {
@@ -77,8 +77,8 @@ public class Nota implements HasID<String> {
     }
 
     /**
-     * modifica id-ul notei
-     * @param id - noul id
+     * modifica id of the grade
+     * @param id - the new id
      */
     @Override
     public void setID(String id) {
@@ -86,16 +86,16 @@ public class Nota implements HasID<String> {
     }
 
     /**
-     * modifica id-ul studentului
-     * @param idStudent - noul id
+     * modify the id of the student
+     * @param idStudent - the new id
      */
     public void setIdStudent(String idStudent) {
         this.idStudent = idStudent;
     }
 
     /**
-     * modifica id-ul temei
-     * @param idTema - noul id
+     * modify the id of the homework
+     * @param idTema - id of the homework
      */
     public void setIdTema(String idTema) {
         this.idTema = idTema;

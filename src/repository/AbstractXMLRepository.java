@@ -19,7 +19,6 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
 
-
 public abstract class AbstractXMLRepository<ID, E extends HasID<ID>> extends AbstractCrudRepository<ID, E> implements FileRepository<ID, E> {
 
     private String filename;
@@ -27,7 +26,7 @@ public abstract class AbstractXMLRepository<ID, E extends HasID<ID>> extends Abs
 
     /**
      * Class constructor
-     * @param filename - numele fisierului
+     * @param filename - the name of the file
      */
     AbstractXMLRepository(String filename) {
         this.filename = filename;
@@ -38,7 +37,7 @@ public abstract class AbstractXMLRepository<ID, E extends HasID<ID>> extends Abs
 
 
     /**
-     * Incarca datele din fisier
+     * Load the data from the file
      */
     public void loadFromFile(){
         try {
@@ -63,7 +62,7 @@ public abstract class AbstractXMLRepository<ID, E extends HasID<ID>> extends Abs
     }
 
     /**
-     * Creeaza un elemenT XML dintr o  entitate
+     * Creates an XML element from an entity
      * @param document
      * @param entity
      * @return
@@ -72,17 +71,17 @@ public abstract class AbstractXMLRepository<ID, E extends HasID<ID>> extends Abs
     public abstract Element createElementfromEntity(Document document, E entity);
 
     /**
-     * Extrage un obiect dintr-un XML
-     * @param element - String-ul din care extrage obiectul
-     * @return - obiectul
+     * Extract an object from an XML entity
+     * @param element - The string for which the object is to be extracted from
+     * @return - the object
      */
 
 
     public abstract E extractEntity(Element element);
     /**
-     * Salveaza un obiect
-     * @param entity - obiectul pe care il salveaza
-     * @return null daca obiectul s-a salvat cu succes sau obiectul daca acesta exista deja in memorie
+     * Saves an object
+     * @param entity - The object to be saved
+     * @return Null if the object was saved successfully, false otherwise
      */
    @Override
     public E save(E entity) {
@@ -95,7 +94,7 @@ public abstract class AbstractXMLRepository<ID, E extends HasID<ID>> extends Abs
         return entity1;
    }
     /**
-     * Rescrie fisierul cu toate obiectele din memorie
+     * Rewrite the file with all the objects from memory
      */
 
     public void writeToFile(){
@@ -123,8 +122,8 @@ public abstract class AbstractXMLRepository<ID, E extends HasID<ID>> extends Abs
     }
 
     /**
-     * Scrie un obiect nou in fisier
-     * @param entity - obiectul pe care il scrie
+     * Write a new object in the file
+     * @param entity - The object to be writte
      */
     public void saveToFile(E entity)
     {
@@ -136,9 +135,9 @@ public abstract class AbstractXMLRepository<ID, E extends HasID<ID>> extends Abs
 
 
     /**
-     * Sterge un obiect
-     * @param id - id-ul obiectului
-     * @return obiectul daca s-a reusit stergerea sau null daca obiectul nu exista
+     * Delete an object
+     * @param id - The id of the object
+     * @return the object if the deletion was successful or null if the object does not exist
      */
     @Override
     public E delete(ID id) {
@@ -150,13 +149,15 @@ public abstract class AbstractXMLRepository<ID, E extends HasID<ID>> extends Abs
     }
 
     /**
-     * Modifica un obiect
-     * @param entity - noul obiect
-     * @return null daca obiectul a fost modificat sau obiectul, daca acesta nu exista
+     * Modify an object
+     * @param entity - The new object
+     * @return null if the object has been modified or the object, if it does not exist
      */
     @Override
     public E update(E entity) {
         E entity1 = super.update(entity);
+        //@Todo doesn't make sense to check if the entity is null or not, only entity1 makes sense
+        //        if(entity1 == null){
         if(entity == null){
             writeToFile();
         }

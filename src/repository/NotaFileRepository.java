@@ -7,15 +7,15 @@ public class NotaFileRepository extends AbstractFileRepository<String, Nota> {
 
     /**
      * Class constructor
-     * @param filename - numele fisierului
+     * @param filename - The name of the file
      */
     public NotaFileRepository(String filename) {
         super( filename);
     }
 
     /**
-     * Extrage informatia despre nota dintr-un string
-     * @param line - stringul din care ia datele notei
+     * Extract grade information from a string
+     * @param line - the string that contains the note
      * @return nota
      */
     @Override

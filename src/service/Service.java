@@ -53,9 +53,9 @@ public class Service {
     }
 
     /**
-     * adauga un Student in memorie
-     * @param student - studentul pe care il adauga
-     * @return null daca studentul a fost adaugat cu succes sau studentul din memorie daca acesta exista deja
+     * Adds a student to memory
+     * @param student - Student to be addedd
+     * @return null if the student was added successfully, the student itself otherwise
      */
     public Student addStudent(Student student) {
         studentValidator.validate(student);
@@ -63,9 +63,9 @@ public class Service {
     }
 
     /**
-     * Sterge un student
-     * @param id - id-ul studentului
-     * @return studentul daca acesta a fost sters sau null daca studentul nu exista
+     * Delete a student
+     * @param id - The id of the student
+     * @return The student if the deletion was sucessful, null otherwise
      */
     public Student deleteStudent(String id){
         if(id == null || id.equals("")) {
@@ -75,9 +75,9 @@ public class Service {
     }
 
     /**
-     * Cauta un student dupa id
-     * @param id - id-ul studentului
-     * @return studentul daca acesta exista sau null altfel
+     * Search for a student by ID
+     * @param id - The id of the student
+     * @return The student if he exists, or unll null otherwise
      */
     public Student findStudent(String id){
         if(id == null || id.equals("")){
@@ -87,9 +87,9 @@ public class Service {
     }
 
     /**
-     * Modifica un student
-     * @param student - noul student
-     * @return noul student daca s-a facut modificarea sau null daca acesta nu exista
+     * Modifies the student
+     * @param student - New student
+     * @return The new student if the modification happens, null otherwise
      */
     public Student updateStudent(Student student){
         studentValidator.validate(student);
@@ -97,16 +97,16 @@ public class Service {
     }
 
     /**
-     * @return toti studentii din memorie
+     * @return Returns all the students in memory as an iterable
      */
     public Iterable<Student> getAllStudenti(){
         return studentFileRepository.findAll();
     }
 
     /**
-     * Adauga o tema noua
-     * @param tema  - tema pe care o adauga
-     * @return null daca s-a facut adaugarea sau tema daca aceasta exista deja
+     * Add a new homework
+     * @param tema  - The homework to be added
+     * @return Null if the homework already exists, the homework otherwise
      */
     public Tema addTema(Tema tema){
         temaValidator.validate(tema);
@@ -114,9 +114,9 @@ public class Service {
     }
 
     /**
-     * Sterge o tema
-     * @param nrTema - nr-ul temei
-     * @return tema daca aceasta a fost stearsa sau null daca tema nu exista
+     * Delete a homework
+     * @param nrTema - The id of hte homework
+     * @return The homework if it was deleted, null otherwise
      */
     public Tema deleteTema(String nrTema){
         if(nrTema == null || nrTema.equals("")) {
@@ -126,9 +126,9 @@ public class Service {
     }
 
     /**
-     * Cauta o tema
-     * @param id - id-ul temei
-     * @return tema sau null daca aceasta nu exista
+     * Find a homework
+     * @param id - The id of the homework
+     * @return The homework or null if it doesn't exist
      */
     public Tema findTema(String id){
         if(id == null || id.equals("")){
@@ -137,9 +137,9 @@ public class Service {
     }
 
     /**
-     * Modifica o tema
-     * @param tema - noua tema
-     * @return tema daca s-a facut modificarea sau null daca acesta nu exisra
+     * Modify a homework
+     * @param tema -New homework
+     * @return The homework if a modification was done sucessfully, null otherwise
      */
     public Tema updateTema(Tema tema){
         temaValidator.validate(tema);
@@ -147,14 +147,14 @@ public class Service {
     }
 
     /**
-     * @return toate temele din memorie
+     * @return All the assignments from memory
      */
     public Iterable<Tema> getAllTeme(){
         return temaFileRepository.findAll();
     }
 
     /**
-     * Adauga o nota
+     * Add a grade
      * @param nota - nota
      * @param feedback - feedback-ul notei
      * @return null daca nota a fost adaugata sau nota daca aceasta exista deja
@@ -200,11 +200,11 @@ public class Service {
     }
 
     /**
-     * Cauta o nota
+     * Search for a great
      * @param id - id-ul notei
      * @return nota sau null daca aceasta nu exista
      */
-    public Nota findNota(String id){
+    public Nota findGrade(String id){
         if(id == null || id.equals("")){
             throw new ValidationException("Id-ul nu poate fi null!");
         }
@@ -219,9 +219,9 @@ public class Service {
     }
 
     /**
-     * Prelungeste deadline-ul unei teme
-     * @param nrTema - nr-ul temei
-     * @param deadline - noul deadline
+     * Prelungeste Deadline of an assignment
+     * @param nrTema - The id of the homework
+     * @param deadline - The new deadline
      */
     public void prelungireDeadline(String nrTema, int deadline){
         int diff= Curent.getCurrentWeek();
@@ -239,9 +239,9 @@ public class Service {
     }
 
     /**
-     * Calculeaza saptamana de predare
-     * @param predare - data predarii unei teme
-     * @return saptamana in care a fost predata tema
+     * Calculate the week of delivery
+     * @param predare - the date of teaching a topic
+     * @return the week in which the topic was taught
      */
     private int calculeazaSPredare(LocalDate predare) {
         LocalDate startDate = Curent.getStartDate();

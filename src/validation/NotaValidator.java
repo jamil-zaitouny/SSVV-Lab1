@@ -12,8 +12,8 @@ public class NotaValidator implements Validator<Nota> {
 
     /**
      * Class constructor
-     * @param studentFileRepository - repository student
-     * @param temaFileRepository - repository tema
+     * @param studentFileRepository - student repository
+     * @param temaFileRepository - homework repository
      */
     public NotaValidator(StudentXMLRepo studentFileRepository, TemaXMLRepo temaFileRepository) {
         this.studentFileRepository = studentFileRepository;
@@ -21,9 +21,9 @@ public class NotaValidator implements Validator<Nota> {
     }
 
     /**
-     * Valideaza o nota
-     * @param nota - nota pe care o valideaza
-     * @throws ValidationException daca nota nu e valida
+     * Validate a grade
+     * @param nota - The grade to validate
+     * @throws ValidationException If the grade is valid
      */
     @Override
     public void validate(Nota nota) throws ValidationException {
