@@ -41,7 +41,6 @@ public class AppTest
 
 
     @Test
-    //todo fix
     public void testGroupNumberValueIsTrue(){
         String studentID = "1";
         String studentName = "Vladimir";
