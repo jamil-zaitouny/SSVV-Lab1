@@ -41,7 +41,37 @@ public class AppTest
 
 
     @Test
-    public void testGroupNumberValueIsTrue(){
+public void testGroupNumberValueIsTrue(){
+    String studentID = "1";
+    String studentName = "Vladimir";
+    int group = 1;
+    String email = "vlad@gmail.com";
+    try{
+        Student student = new Student(studentID, studentName, group, email);
+        service.addStudent(student);
+        assertTrue(true);
+
+    }catch (Exception exception){
+        fail();
+    }
+}
+    @Test
+    public void testGroupNumberValueIsFalse(){
+        String studentID = "1";
+        String studentName = "Vladimir";
+        int group = -1;
+        String email = "vlad@gmail.com";
+        try{
+            Student student = new Student(studentID, studentName, group, email);
+            service.addStudent(student);
+            fail();
+
+        }catch (Exception exception){
+            assertTrue(true);
+        }
+    }
+    @Test
+    public void testIdNumberValueIsTrue(){
         String studentID = "1";
         String studentName = "Vladimir";
         int group = 1;
@@ -56,11 +86,71 @@ public class AppTest
         }
     }
     @Test
-    public void testGroupNumberValueIsFalse(){
+    public void testIdNumberValueIsFalse(){
+        String studentID = "";
+        String studentName = "Vladimir";
+        int group = 1;
+        String email = "vlad@gmail.com";
+        try{
+            Student student = new Student(studentID, studentName, group, email);
+            service.addStudent(student);
+            fail();
+
+        }catch (Exception exception){
+            assertTrue(true);
+        }
+    }
+    @Test
+    public void testNameValueIsTrue(){
         String studentID = "1";
         String studentName = "Vladimir";
-        int group = -1;
+        int group = 1;
         String email = "vlad@gmail.com";
+        try{
+            Student student = new Student(studentID, studentName, group, email);
+            service.addStudent(student);
+            assertTrue(true);
+
+        }catch (Exception exception){
+            fail();
+        }
+    }
+    @Test
+    public void testNameValueIsFalse(){
+        String studentID = "1";
+        String studentName = "";
+        int group = 1;
+        String email = "vlad@gmail.com";
+        try{
+            Student student = new Student(studentID, studentName, group, email);
+            service.addStudent(student);
+            fail();
+
+        }catch (Exception exception){
+            assertTrue(true);
+        }
+    }
+    @Test
+    public void testEmailValueIsTrue(){
+        String studentID = "1";
+        String studentName = "Vladimir";
+        int group = 1;
+        String email = "vlad@gmail.com";
+        try{
+            Student student = new Student(studentID, studentName, group, email);
+            service.addStudent(student);
+            assertTrue(true);
+
+        }catch (Exception exception){
+            fail();
+        }
+    }
+    @Test
+    public void testEmailValueIsFalse(){
+        String studentID = "1";
+        String studentName = "Vladimir";
+        int group = 1;
+        String email = "";
         try{
             Student student = new Student(studentID, studentName, group, email);
             service.addStudent(student);
