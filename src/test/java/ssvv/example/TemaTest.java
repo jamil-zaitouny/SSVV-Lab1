@@ -125,9 +125,11 @@ public class TemaTest {
 	public void testTemaNull(){
 		try{
 			service.addTema(null);
-			Assert.assertTrue(true);
+			fail();
 		}catch (ValidationException exception){
 			fail();
+		}catch(NullPointerException excpetion){
+			Assert.assertTrue(true);
 		}
 	}
 	@Test
