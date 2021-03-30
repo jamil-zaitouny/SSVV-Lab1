@@ -39,7 +39,6 @@ public class AppTest
         service = new Service(studentXMLRepository, studentValidator, temaXMLRepository, temaValidator, notaXMLRepository, notaValidator);
     }
 
-
     @Test
 public void testGroupNumberValueIsTrue(){
     String studentID = "1";
