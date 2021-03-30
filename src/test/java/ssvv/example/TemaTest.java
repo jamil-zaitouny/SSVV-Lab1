@@ -122,6 +122,15 @@ public class TemaTest {
 	}
 
 	@Test
+	public void testTemaNull(){
+		try{
+			service.addTema(null);
+			Assert.assertTrue(true);
+		}catch (ValidationException exception){
+			fail();
+		}
+	}
+	@Test
 	public void testTemaNotNull(){
 		try{
 			service.addTema(new Tema("12312,", "123123", 1, 1));
