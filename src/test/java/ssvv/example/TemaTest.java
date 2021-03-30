@@ -50,7 +50,19 @@ public class TemaTest {
 		}
 	}
 	@Test
-	public void testDescriptionNull(){
+	public void testIdEmpty(){
+		try{
+			Tema tema = new Tema("", "asdasd", 1, 1);
+			service.addTema(tema);
+			fail();
+
+		}catch (Exception exception){
+			assertTrue(true);
+		}
+	}
+
+	@Test
+	public void testDescriptionEmpty(){
 		Tema tema = new Tema("asdas", "", 1, 1);
 		try{
 			service.addTema(tema);
@@ -60,7 +72,7 @@ public class TemaTest {
 		}
 	}
 	@Test
-	public void testDeadlineOutOfRange(){
+	public void testHomeworkDeadlineOutOfRangeMoreThan14(){
 		Tema tema = new Tema("asdas", "asdasdad", 15, 1);
 		try{
 			service.addTema(tema);
@@ -70,8 +82,28 @@ public class TemaTest {
 		}
 	}
 	@Test
-	public void testDeadlineOutOfPrimire(){
+	public void testHomeworkDeadlineOutOfRangeLessThan1(){
+		Tema tema = new Tema("asdas", "asdasdad", 0, 1);
+		try{
+			service.addTema(tema);
+			Assert.fail();
+		}catch (ValidationException exception){
+			Assert.assertTrue(true);
+		}
+	}
+	@Test
+	public void testDeadlineOutOfPrimireMoreThan14(){
 		Tema tema = new Tema("asdas", "asdasdad", 12, 15);
+		try{
+			service.addTema(tema);
+			Assert.fail();
+		}catch (ValidationException exception){
+			Assert.assertTrue(true);
+		}
+	}
+	@Test
+	public void testDeadlineOutOfPrimireLessThan1(){
+		Tema tema = new Tema("asdas", "asdasdad", 12, 0);
 		try{
 			service.addTema(tema);
 			Assert.fail();
