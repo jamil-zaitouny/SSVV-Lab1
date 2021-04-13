@@ -83,7 +83,7 @@ public class BigBangIntegrationTest {
 
     }
     @Test
-    public void addStudent(){
+    public void testAdd(){
         testAddStudent();
         testAddHomework();
         testAddGrade();
