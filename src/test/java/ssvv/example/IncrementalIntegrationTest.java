@@ -16,7 +16,7 @@ import ssvv.validation.TemaValidator;
 import java.time.LocalDate;
 import static org.junit.Assert.fail;
 
-public class IncrementalIntegrationTesting {
+public class IncrementalIntegrationTest {
     static Service service;
     @BeforeClass
     public static void start(){
