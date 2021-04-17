@@ -65,6 +65,8 @@ public class BigBangIntegrationTest {
     }
     @Test
     public void testAddGrade(){
+        testAddStudent();
+        testAddHomework();
         try{
             String studentID = "1";
             String homeworkID = "1";
